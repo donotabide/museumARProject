@@ -13,6 +13,9 @@ var isSelected;
 
 var closeX, closeY;
 
+var rec;
+var txt;
+
 function preload() {
   img = loadImage("imgs/image2.jpg");
 }
@@ -31,6 +34,14 @@ function setup() {
 
   closeX = 50;
   closeY = 50;
+
+  rec = new p5.SpeechRec();
+  rec.continuous = true;
+  rec.interimResults = true;
+  rec.onResult = parseResult;
+  rec.start();
+
+  txt = 'hi';
 }
 
 
@@ -45,9 +56,10 @@ function draw() {
   }
 
   if(isSelected) {
+    //clear background
     background(0);
     posX = width/2;
-    posY = height/2 - 100;
+    posY = 150;
     image(img, posX, posY);
 
     //close button
@@ -55,6 +67,7 @@ function draw() {
     ellipse(closeX, closeY, 25);
 
     //text to speech stuff on bottom
+    text(txt, 50, 500);
   }
 }
 
@@ -65,5 +78,11 @@ function mousePressed() {
 
   if(mouseX > closeX - 25 && mouseX < closeX + 25 && mouseY > closeY - 25 && mouseY < closeY + 25) {
     isSelected = false;
+  }
+}
+
+function parseResult() {
+  if(isSelected) {
+    txt += rec.resultString;
   }
 }
