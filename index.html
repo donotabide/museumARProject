@@ -16,7 +16,7 @@
 		<script language="javascript" type="text/javascript" src="./lib/aframep5_ar.js"></script>
 
 		<!-- P5 Sketch -->
-		<script language="javascript" type="text/javascript" src="sketch.js"></script>
+		<!--<script language="javascript" type="text/javascript" src="sketch.js"></script>-->
 
 		<!-- Custom Styles -->
 		<style type="text/css">
@@ -53,19 +53,20 @@
 	<body>
 
 		<!-- modal box to tell the user to rotate their device into landscape mode - the AR toolkit only reliably renders in landscape mode -->
-		<div id="portrait_warning">
-			<h1>Rotate your device into landscape mode!</h1>
-		</div>
+		<!--<div id="portrait_warning">-->
+			<!--<h1>Rotate your device into landscape mode!</h1>-->
+		<!--</div>-->
 
-		<!-- Define A-Frame VR Scene and set it up so that it will be manipulated through AR.js -->
-		<a-scene id="ARScene" embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono;'>
+		<!--&lt;!&ndash; Define A-Frame VR Scene and set it up so that it will be manipulated through AR.js &ndash;&gt;-->
+		<!--<a-scene id="ARScene" embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono;'>-->
 
-			<!-- set up all of the AR markers we will be working with along with links to their 'pattern' files -->
-			<!-- note that we aren't putting any geometry inside of marker here - we will do that in the p5 sketch -->
-			<a-marker id="hiro" preset="custom" url="./markers/patt.hiro"></a-marker>
-			<a-marker id="zb" preset="custom" url="./markers/patt.zb"></a-marker>
+			<!--&lt;!&ndash; set up all of the AR markers we will be working with along with links to their 'pattern' files &ndash;&gt;-->
+			<!--&lt;!&ndash; note that we aren't putting any geometry inside of marker here - we will do that in the p5 sketch &ndash;&gt;-->
+			<!--<a-marker id="hiro" preset="custom" url="./markers/patt.hiro"><a href="google.com"></a></a-marker>-->
+			<!--<a-marker id="zb" preset="custom" url="./markers/patt.zb"></a-marker>-->
 
-			<a-entity camera></a-entity>
-		</a-scene>
+
+			<!--<a-entity camera></a-entity>-->
+		<!--</a-scene>-->
 	</body>
 </html>
